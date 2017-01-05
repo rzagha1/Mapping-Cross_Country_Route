@@ -9,7 +9,7 @@ def Google_Route(jsonfile):
     from datetime import datetime
     conn = psycopg2.connect("dbname='postgres' user='postgres' host='localhost' password='mypass' port = '5432' ") #connecting to DB
     cur = conn.cursor()  #setting up connection cursor
-    cur.execute('''drop table ccpoints''')
+    #cur.execute('''drop table ccpoints''')
     #setting up route points table
     cur.execute('''CREATE TABLE ccpoints
                 (pid serial primary key,
@@ -34,7 +34,7 @@ def Google_Route(jsonfile):
                     datereal = str(datetime.fromtimestamp(int(z)/1000))
             cur.execute(""" insert into ccpoints (lat, long, datereal,datetosort, routes)
             values(%s,%s,%s,%s,ST_SetSRID(ST_MakePoint(%s, %s), 4269))""",(lat,longitude,datereal,datesort,longitude,lat))
-    cur.execute("""drop table RoutePostGIS""")
+    #cur.execute("""drop table RoutePostGIS""")
     cur.execute("""CREATE TABLE RoutePostGIS as
     SELECT s.name as state, r.datetosort as date, ST_MakeLine(r.routes ORDER BY r.datereal) as geom
         FROM ccpoints AS r INNER JOIN states as s ON st_intersects(s.geom,r.routes)
