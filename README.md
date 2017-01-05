@@ -10,4 +10,4 @@ Using Python/PostGIS and Python/Fiona/Shapely to create routes from my google ma
 
 4. Enter Google maps location history JSON file path to function
 
-5. Export shapefile and convert to KML to view in google maps - *You can use QGIS, ArcGIS, Python/Fiona
+5. Export shapefile and convert to KML to view in google maps - *You can use QGIS, ArcGIS, ogr2gr
