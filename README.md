@@ -1,6 +1,6 @@
 # Mapping_Cross_Country_Route
 
-Using Python/PostGIS to create routes from my google maps location data
+Using Python/PostGIS and Python/Fiona/Shapely to create routes from my google maps location data
 
 1. Download Location History from google maps. https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=google%20maps%20timeline%20history *note location needs to be turned on and google maps needs to be the default mapping app (usually not the case for iphones). Click on settings, download a copy of your data, and download it as a zipped JSON file
 
