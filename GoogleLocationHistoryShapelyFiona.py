@@ -1,12 +1,13 @@
+import os
+import sys
+import json
+import fiona
+from shapely.geometry import mapping,LineString,Point,shape
+from shapely.wkt import loads,load
+from fiona.crs import from_epsg
+from datetime import datetime
+
 def Google_Locations_Shapely(jsonfile,statefile,outputfile):
-    import os
-    import sys
-    import json
-    import fiona
-    from shapely.geometry import mapping,LineString,Point,shape
-    from shapely.wkt import loads,load
-    from fiona.crs import from_epsg
-    from datetime import datetime
     lat = ""
     longitude = ""
     datesort = ""
@@ -38,7 +39,7 @@ def Google_Locations_Shapely(jsonfile,statefile,outputfile):
                     'geometry': mapping(ls)})
     return "Noury Chemtob"
 
-jsonfile = r'C:\Users\Ralph\Desktop\LocationHistory.json'
-states = r"C:\Users\Ralph\Documents\MyRoutes\States.shp"
-outfile = r"C:\Users\Ralph\Desktop\RouteShapely.shp"
+jsonfile = r'\LocationHistory.json'
+states = r"\MyRoutes\States.shp"
+outfile = r"\RouteShapely.shp"
 Google_Locations_Shapely(jsonfile,states,outfile)
